@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: laborator-deployment2
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: laborator
+  template:
+    metadata:
+      labels:
+        app: laborator
+    spec:
+      containers:
+      - name: laborator-container2
+        image: sap4k/laborator:lab_modificari
+        ports:
+        - containerPort: 8080  # adaptează dacă aplicația ta rulează pe alt port
